@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery - Datepicker日历控件示例</title>
+    <link href="../js/style.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            if ($.datepicker) {
+                $.datepicker.regional['zh-CN'] = {
+                    closeText: '关闭',
+                    prevText: '&#x3c;上月',
+                    nextText: '下月&#x3e;',
+                    currentText: '今天',
+                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+		    '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    monthNamesShort: ['一', '二', '三', '四', '五', '六',
+		    '七', '八', '九', '十', '十一', '十二'],
+                    dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+                    dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+                    dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+                    weekHeader: '周',
+                    dateFormat: 'yy-mm-dd',
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: true,
+                    yearSuffix: '年'
+                };
+                $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <label for="datepickerStart">出发日期：</label><input id="datepickerStart" />&nbsp;
+        <label>隐藏值：</label><input id="alternate" />             
+    </div>   
+    <div>
+        <label for="datepickerEnd">结束日期：</label><input id="datepickerEnd" />
+    </div> 
+    <div id="divDatepicker"></div>
+    <script type="text/javascript">
+        $(function () {
+            var $dateStart = jQuery("#datepickerStart");
+            var $dateEnd = jQuery("#datepickerEnd");
+
+
+            //            $dateStart.datepicker(); //默认样式
+            //            $dateStart.datepicker({dateFormat:"yy-mm-dd"}); //修改返回的日期格式为"yy-mm-dd"
+            //            $dateStart.datepicker({ numberOfMonths: 2, minDate: +0, maxDate: '+3M +1D}); //限制可选择的日期
+            //            $dateStart.datepicker({ altField: "#alternate", altFormat:"DD,d MM, yy"}); //选中日期后，用不同日期格式填充另外一个input
+            //            $dateStart.datepicker({ showButtonPanel: true });                    //显示按钮
+            //            $dateStart.datepicker({ changeMonth: true, changeYear: true });      //显示更换月份和年份
+            //            $dateStart.datepicker({ showOtherMonths: true, selectOtherMonths: true });   //在本月中，显示上一个月和下一个月的部分日期
+            //            $dateStart.datepicker({ showWeek: true, firstDay: 1 });  //显示每一周是今年的第几周
+            //            $dateStart.datepicker({ numberOfMonths: 3 });        //同时显示3个月份
+            //            $dateStart.datepicker({ showAnim: "slideDown" });    //使用不同的动画效果显示日历
+
+            //            //两个日历框联动。
+            //            var $datepickerStart = $dateStart.datepicker({
+            //                minDate: +0,
+            //                onSelect: function (selectedDate) {
+            //                    $datepickerEnd.datepicker("option", "minDate", selectedDate);
+            //                }
+            //            });
+            //            var $datepickerEnd = $dateEnd.datepicker();
+
+            $dateStart.datepicker({
+                altField: "#alternate",
+                altFormat: "DD,d MM, yy"
+            });
+
+            $dateEnd.datepicker({
+                altField: "#alternate",
+                altFormat: "DD,d MM, yy"
+            });
+
+            $dateEnd.datepicker("option", "altField");
+        })        
+    </script>
+</body>
+</html>

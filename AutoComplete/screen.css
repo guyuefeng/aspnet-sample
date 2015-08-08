@@ -1,0 +1,20 @@
+body { color:#000; margin:0; padding:0; font-family:Georgia, serif; font-size:16px; line-height:1.5em; background:#DCDCDC ; }
+img { border:0; }
+a {color:#FF0000; background-color: #6699FF;font-family: Verdana,Arial,sans-serif; font-size: 1em; list-style: circle;}
+
+.clearafter { display:inline-block; }
+.container { width:920px; margin:0 auto; position:relative; z-index:1 }
+.transperent-box { position:relative; padding:0 0 25px; border:#A5A5A5 solid 1px;}
+.trans-box-light { position:relative; padding:15px; background:RGBA(255, 255, 255, 0.3);border:#A5A5A5 solid 1px; }
+
+/* Main Layout */
+.textbox { width:250px; padding:5px 6px; vertical-align:middle; border:1px solid #a4a4a4; background:#FFF; }
+.half-column { width:428px; margin:0px 40px 34px 0px; display:block; float:left; }
+.half-column h1 { margin:-5px 0px 11px; }
+
+/* Autocomplete */
+.autocomplete { border:1px solid #a4a4a4; border-top:none; background:#FFF; box-shadow:0 3px 6px #AAA;overflow:auto;}
+.autocomplete > div { padding:10px; border:none; }
+.autocomplete > div + div { border-top:1px solid #EEE; }
+.autocomplete .selected { background:#EDFDFF; }
+.autocomplete strong { color:#009BCF; }

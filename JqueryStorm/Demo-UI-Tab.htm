@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery UI - Tab控件应用实例</title>   
+    <link href="../js/style.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Function.prototype.proxy = function (context) {
+            return jQuery.proxy(this, context);
+        };
+    </script>
+      <style type="text/css">
+        body
+        {
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+    <!--Demo.默认Tab与Ajax Tab -->
+    <div id="tabs1" style="width:300px;">
+        <ul>
+            <li><a href="#tabs1-1">One</a></li>
+            <!-- Ajax Tab -->
+            <li><a href="TabData.htm">Two</a></li>
+            <li><a href="#tabs1-3">Three</a></li>
+        </ul>
+        <div id="tabs1-1">
+            <p>Tab1内容</p>
+        </div>
+        <div id="tabs1-3">
+            <p>Tab3内容</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <!--Demo. 可折叠的Tab -->
+    <div id="tabs2" style="width: 300px;">
+        <ul>
+            <li><a href="#tabs2-1">One</a></li>
+            <li><a href="#tabs2-2">Two</a></li>
+            <li><a href="#tabs2-3">Three</a></li>
+        </ul>
+        <div id="tabs2-1">
+            <p>Tab1内容</p>
+        </div>
+        <div id="tabs2-2">
+            <p>Tab2内容</p>
+        </div>
+        <div id="tabs2-3">
+            <p>Tab3内容</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <!--Demo. 鼠标滑动即切换的Tab -->
+    <div id="tabs3" style="width: 300px;">
+        <ul>
+            <li><a href="#tabs3-1">One</a></li>
+            <li><a href="#tabs3-2">Two</a></li>
+            <li><a href="#tabs3-3">Three</a></li>
+        </ul>
+        <div id="tabs3-1">
+            <p>Tab1内容</p>
+        </div>
+        <div id="tabs3-2">
+            <p>Tab2内容</p>
+        </div>
+        <div id="tabs3-3">
+            <p>Tab3内容</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var thisPage = {
+            initialize: function () {//加载时执行
+                //默认Tabs
+                $("#tabs1").tabs();
+                //可折叠的Tabs
+                $("#tabs2").tabs({
+                    collapsible: true
+                });
+                //鼠标滑动即切换的Tabs
+                $("#tabs3").tabs({
+                    event: "mouseover"
+                });
+            }
+        }
+
+        $(thisPage.initialize());        
+         
+    </script>
+</body>
+</html>

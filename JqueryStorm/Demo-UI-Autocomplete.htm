@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>jQuery UI - Augocomplete控件应用实例</title>
+	<link href="../js/style.css" rel="stylesheet" type="text/css" />
+	<script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<div>
+		<label>
+			出发城市：
+		</label>
+		<input id="startCity" />
+		<input id="hStartCity" name="startCity" type="hidden" />
+	</div>
+	<script type="text/javascript">
+		var thisPage = {
+			initialize: function () {
+				this.$citys = [{ label: "Beijing 北京", value: "北京", cityId: "BJS" }, { label: "Shanghai 上海", value: "上海", cityId: "SHA"}];
+				this.$startCity = $("#startCity");
+				this.$hStartCity = $("hStartCity");
+
+				this.$startCity.autocomplete({
+					source: this.$citys,
+					select: function (event, ui) {
+						jQuery("#startCity").val(ui.item.value);
+						jQuery("#hStartCity").val(ui.item.cityId);
+						jQuery("#endCity").click();
+					},
+					minLength: 0
+				});
+
+				this.$startCity.click(jQuery.proxy(this.onStartCityFocus, this));
+			},
+
+			onStartCityFocus: function (e) {
+				if ($(e.target).val() === "") {
+					this.$startCity.autocomplete("search", "");
+				}
+			}
+		}
+
+		$(function () {
+			thisPage.initialize();
+		})  
+	</script>
+</body>
+</html>

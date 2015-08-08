@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>顶部导航</title>
+<link type="text/css" rel="stylesheet" href="common/common.css" />
+<style type="text/css">
+.nav{width:960px;height:29px;text-align:left;margin:20px auto 0;background:url(images/ui/sp_nav.gif) repeat-x 0 -30px;position:relative;}
+.nav ul{margin-left:10px;}
+.nav ul li{float:left;width:auto;line-height:29px;display:inline;text-align:center;padding-left:5px;font-size:14px;font-weight:bold;background:url(images/ui/sp_nav.gif) no-repeat right -59px;}
+.nav ul li a{float:left;width:auto;color:#FFF;padding:0 20px;}
+.nav ul li.select{background:url(images/ui/sp_nav.gif) no-repeat 0 -90px;position:relative;margin-top:-4px;}
+.nav ul li.select a{background:url(images/ui/sp_nav.gif) no-repeat right -90px;height:33px;line-height:33px;color:#333;text-indent:-5px;}
+</style>
+</head>
+<body>
+<div class="nav">
+	<ul>
+    	<li><a href="#" name="navurl">首 页</a></li>
+        <li><a href="#" name="navurl">手机卖场</a></li>
+        <li><a href="#" name="navurl">数码天下</a></li>
+        <li><a href="#" name="navurl">时尚女人</a></li>
+        <li><a href="#" name="navurl">精美家居</a></li>
+        <li><a href="#" name="navurl">男人风</a></li>
+        <li><a href="#" name="navurl">名品秀</a></li>
+        <li><a href="#" name="navurl">特价活动</a></li>
+    </ul>
+</div>
+<script language="javascript">
+	function nav(){
+	   var url = document.URL;
+		var urls = document.getElementsByName("navurl");
+		for(var i=0;i<urls.length;i++){
+			if(urls[i] == url){
+				urls[i].parentNode.className = 'select';
+				return;
+			}
+		}
+		urls[0].parentNode.className = 'select';
+	}
+	nav();
+// jQuery	
+$(function(){
+	var a1 = document.URL;
+	var a2 = $(".nav_other a");
+	for(var i=0;i<a2.length;i++){
+		if(a2[i] == a1){
+			$(a2[i]).parent().addClass("select");
+			return;
+		}
+	}
+	$(a2[0]).parent().addClass("select");
+})
+</script>
+</body>
+</html>

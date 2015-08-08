@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>SlideDemo</title>
+    <script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="jQuery.Slide.js"></script>
+    
+    <script type="text/javascript">
+
+        $(function() {
+            $("#div_Slide").Slide({
+                auto: true,
+                width: 85,
+                height: 42,
+                onstart: function(curImg, nextImg) {
+                    var cData = curImg.attr("data");
+                    var nData = nextImg.attr("data");
+                    var bigCur = $("#" + cData), bigNext = $("#" + nData);
+
+                    var allBigImg = bigCur.parent().children("img");
+                    var curIndex = allBigImg.index(bigCur[0]);
+                    var nextIndex = allBigImg.index(bigNext[0]);
+
+                    var firstImg = $(allBigImg[0]);
+                    if (firstImg.attr("id") != bigCur.attr("id"))
+                        bigCur.insertBefore(firstImg);
+                    $("#div_BigImg").scrollLeft(0);
+                    bigNext.insertAfter(bigCur);
+                },
+                onchange: function(percent) {
+                    $("#div_BigImg").scrollLeft(1263 * percent);
+                }
+            });
+            var bigDiv = $("#div_BigImg");
+            var bigDivPos = bigDiv.position();
+            bigDiv.scrollLeft(0);
+
+            $("#div_Slide").css({
+                "top": (bigDivPos.top + bigDiv.height() - $("#div_Slide").height()) + "px",
+                "left": bigDivPos.left + "px"
+            });
+        });
+    </script>
+    <style type="text/css">
+        .bigImgContaint img{
+            width:1263px;
+            height:325px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_BigImg" style="width:1263px;height:325px;overflow-y:hidden;overflow-x:hidden;" class="bigImgContaint">
+		<!--此处的Img一定要改在同一行，否则在IE7、8中每个图片后面会有空隙-->
+        <div style="width:5052px;overflow:hidden;">
+            <img id="img_Big_1" src="Images/benner-1.jpg" alt=""/><img id="img_Big_2" src="Images/benner-2.jpg" alt=""/><img id="img_Big_3" src="Images/benner-3.jpg" alt=""/><img id="img_Big_5" src="Images/benner-1.jpg" alt=""/><img id="img_Big_4" src="Images/benner-4.jpg" alt=""/>
+        </div>
+    </div>
+    <div id="div_Slide" style="width:280px;height:70px;border:solid 0px #fff;position:absolute;">
+        <img src="Images/benner-1-s.jpg" data="img_Big_1" alt=""/>
+        <img src="Images/benner-2-s.jpg" data="img_Big_2" alt=""/>
+        <img src="Images/benner-3-s.jpg" data="img_Big_3" alt=""/>
+        <img src="Images/benner-1-s.jpg" data="img_Big_5" alt=""/>
+        <img src="Images/benner-4-s.jpg" data="img_Big_4" alt=""/>
+    </div>
+</body>
+</html>

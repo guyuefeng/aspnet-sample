@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="jggrid_Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+    <link rel="Stylesheet" type="text/css" href="css/themes/flick/jquery.ui.all.css" />
+    <link rel="Stylesheet" type="text/css" href="css/ui.jqgrid.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>   
+    <script type="text/javascript" src="js/grid.locale-cn.js"></script> 
+    <script type="text/javascript" src="js/jquery.jqGrid.min.js"></script>    
+    <script type="text/javascript" src="js/jquery.wresize.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

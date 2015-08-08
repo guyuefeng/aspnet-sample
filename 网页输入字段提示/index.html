@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><title>
+
+</title><link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_cn.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+
+    <script type="text/javascript">  
+        $(function() {
+            //表单验证JS
+            $("#form1").validate({
+                //出错时添加的标签
+                errorElement: "span",
+                success: function(label) {
+                    //正确时的样式
+                    label.text(" ").addClass("success");
+                }
+            });
+          
+        });
+    </script>
+</head>
+<body>
+    <form name="form1" method="post" action="SysConfig.aspx" id="form1">
+
+    <div class="navigation">
+      <span class="back"><a href="#">返回列表</a></span><b>您当前的位置：首页 &gt; 系统管理 &gt; 系统信息修改</b>
+    </div>
+    <div class="spClear"></div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+        <tr>
+    <td width="25%" align="right">网站名称：</td>
+    <td width="75%">
+        <input name="txtWebName" type="text" value="1231" maxlength="50" id="txtWebName" class="input required" size="48" HintTitle="系统的名称" HintInfo="给你的系统起个有意义的名字哦，长度不能超过50个字符。" />
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">办公电话：</td>
+    <td>
+	<input name="txtWebTel" type="text" value="3213112212" maxlength="50" id="txtWebTel" class="input required" size="25" HintTitle="办公电话号码" HintInfo="格式如：0757-22228888。" />
+    </td>
+  </tr>
+  <tr>
+    <td align="right">管理员信箱：<br /></td>
+    <td><input name="txtWebEmail" type="text" value="23" maxlength="50" id="txtWebEmail" class="input" size="25" HintTitle="网站管理员信箱" HintInfo="方便客户需要咨询时发送邮件。" /></td>
+  </tr>
+  <tr>
+    <td align="right">网站备案号：</td>
+    <td><input name="txtWebCrod" type="text" value="233" maxlength="50" id="txtWebCrod" class="input" size="25" HintTitle="网站备案号码" HintInfo="信息产业部申请的合法TCP/IP备案号。" /></td>
+  </tr>
+  <tr>
+    <td align="right">网站关健字：</td>
+    <td>
+      <input name="txtWebKeywords" type="text" value="ewqewqe" maxlength="250" id="txtWebKeywords" class="input" HintTitle="网站关健字" HintInfo="搜索引擎可根据网站设置的关健字，以“,”号分隔开。" style="width:300px;" />
+    </td>
+  </tr>
+  <tr>
+    <td align="right">网站描述：</td>
+    <td>
+      <textarea name="txtWebDescription" rows="2" cols="20" id="txtWebDescription" class="textarea" HintTitle="网站描述" HintInfo="搜索引擎可根据网站设置的描述信息，字符小于等于250位字符。" style="width:300px;height:45px;">
+adf</textarea>
+        &nbsp;</td>
+  </tr>
+    <tr>
+    <td align="right">允许上传附件类型：</td>
+    <td>
+    <input name="Textfuj" type="text" value="GIF|JPG|PNG|BMP|RAR|DOC|XLS|TXT|SWF|ewwqew" maxlength="150" id="Textfuj" class="input required" size="75" HintTitle="允许上传附件类型" HintInfo="用 | 隔开大写 格式如：GIF|JPG|PNG|BMP|RAR|DOC|XLS|TXT" />
+       </td>
+  </tr>
+
+    <tr>
+    <td align="right">开启日志：</td>
+    <td>
+     <input id="CBLog" type="checkbox" name="CBLog" />
+     
+     </td>
+     </tr>
+
+     <tr>
+    <td align="right">开启新闻栏目权限：</td>
+    <td>
+     <input id="CBNews" type="checkbox" name="CBNews" checked="checked" />
+     
+     </td>
+     </tr>
+      
+    
+    </table>
+    <div style="margin-top:10px;text-align:center;">
+  <input type="submit" name="btnSave" value="确认保存" id="btnSave" class="submit" />
+  &nbsp;
+  <input type="button" class="submit" id="btnCancel" value="取消" />
+
+
+</div>
+    </form>
+</body>
+</html>

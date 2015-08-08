@@ -1,0 +1,12 @@
+
+/* Projects - Jquery */
+
+.jquery-heading .trans-box-light{ padding: 0; margin: 10px 0; background-color: RGBA(255, 255, 255, 0.3);}
+.ajax-demo{ padding:15px 20px; border-bottom: #B2B2B2 solid 1px; position: relative;}
+.no-ajax-demo{ padding:15px 20px; border-top: #fff solid 1px; position: relative; }
+.ajax-demo h3, .no-ajax-demo h3{ margin: 0; font-family: arial, sans-serif; font-size: 12px; font-weight: normal; color: #000; position: absolute; right: 20px; top: 20px; text-transform: none; }
+.ajax-demo label, .no-ajax-demo label, .no-ajax-demo strong{ font-size: 12px; font-family: arial, sans-serif; font-size: 12px; font-weight: bold; color: #000;}
+.suggest label{ font-weight: normal;}
+.ajax-demo .textbox, .no-ajax-demo .textbox{ width: 372px;}
+
+

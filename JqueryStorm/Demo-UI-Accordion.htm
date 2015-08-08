@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery UI - Tab控件应用实例</title>   
+    <link href="../js/style.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Function.prototype.proxy = function (context) {
+            return jQuery.proxy(this, context);
+        };
+    </script>
+      <style type="text/css">
+        body
+        {
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo. 默认配置的Accordion菜单 -->
+    <div style="width: 300px; float:left; margin-left:20px;">
+        <div id="accordion1">
+            <h3><a href="#">菜单1</a></h3>
+            <div>
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+            </div>
+            <h3><a href="#">菜单2</a></h3>
+            <div>
+                菜单2的内容
+            </div>
+            <h3><a href="#">菜单3</a></h3>
+            <div>
+                菜单3的内容
+            </div>
+        </div>
+    </div>
+    <!-- Demo. 取消自动高度, 可折叠 -->
+    <div style="width: 300px; float: left; margin-left: 20px;">
+        <div id="accordion2">
+            <h3><a href="#">菜单1</a></h3>
+            <div>
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+            </div>
+            <h3><a href="#">菜单2</a></h3>
+            <div>
+                菜单2的内容
+            </div>
+            <h3><a href="#">菜单3</a></h3>
+            <div>
+                菜单3的内容
+            </div>
+        </div>
+    </div>
+    <!-- Demo. 鼠标滑动触发, 自定义图标 -->
+    <div style="width: 300px; float: left; margin-left: 20px;">
+        <div id="accordion3">
+            <div><a href="#">菜单1</a></div>
+            <div>
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+                菜单1的内容<br />
+            </div>
+            <div><a href="#">菜单2</a></div>
+            <div>
+                菜单2的内容
+            </div>
+            <div><a href="#">菜单3</a></div>
+            <div>
+                菜单3的内容
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var thisPage = {
+            initialize: function () {//加载时执行
+                //默认配置的Accordion菜单
+                $("#accordion1").accordion({ header: "h3" });
+                //取消自动高度, 可折叠
+                $("#accordion2").accordion({
+                    autoHeight: false,
+                    collapsible: true
+                });
+                //鼠标滑动触发, 自定义图标
+                $("#accordion3").accordion({
+                    icons: {
+                        header: "ui-icon-circle-arrow-e",
+                        headerSelected: "ui-icon-circle-arrow-s"
+                    },
+                    event: "mouseover"
+                });
+            }
+        }
+
+        $(thisPage.initialize());        
+         
+    </script>
+</body>
+</html>
